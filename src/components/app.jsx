@@ -1,17 +1,30 @@
-import React from "react";
 import Main from "./main.jsx";
+import PropTypes from "prop-types";
+import React from "react";
 
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const {title, genre, year} = props;
+  const {promoTitle, promoGenre, promoYear, films} = props;
 
   return (
     <Main
-      title={title}
-      genre={genre}
-      year={year}
+      promoTitle={promoTitle}
+      promoGenre={promoGenre}
+      promoYear={promoYear}
+      films={films}
     />
   );
+};
+
+App.propTypes = {
+  promoTitle: PropTypes.string.isRequired,
+  promoGenre: PropTypes.string.isRequired,
+  promoYear: PropTypes.number.isRequired,
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+      })
+  )
 };
 
 export default App;
