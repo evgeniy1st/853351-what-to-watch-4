@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import React from "react";
-import App from "./components/app.jsx";
+import App from "./components/app/app.jsx";
 
 const Films = [
   {
@@ -63,6 +63,7 @@ const init = () => {
         promoGenre={PromoFilm.GENRE}
         promoYear={PromoFilm.YEAR}
         films={Films}
+        onTitleClick={() => {}}
       />,
       document.querySelector(`#root`)
   );
