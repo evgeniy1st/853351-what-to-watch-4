@@ -98,11 +98,11 @@ const Main = (props) => {
           </ul>
 
           <div className="catalog__movies-list">
-            {films.map((it) => {
+            {films.map((film) => {
               return (
-                <article key={it.title} className="small-movie-card catalog__movies-card">
+                <article key={film.title} className="small-movie-card catalog__movies-card">
                   <div className="small-movie-card__image">
-                    <img src={it.image} alt={it.title} width="280" height="175" />
+                    <img src={film.image} alt={film.title} width="280" height="175" />
                   </div>
                   <h3 className="small-movie-card__title">
                     <a
@@ -110,7 +110,7 @@ const Main = (props) => {
                       onClick={onTitleClick}
                       href="movie-page.html"
                     >
-                      {it.title}
+                      {film.title}
                     </a>
                   </h3>
                 </article>
