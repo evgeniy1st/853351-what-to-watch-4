@@ -9,7 +9,7 @@ it(`render App`, () => {
       image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
     },
     {
-      title: `Fantastic Beasts: The Crimes of Grindelwald`,
+      title: `Fantastic Beasts: The Crimes of Grindelwald2`,
       image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
     }
   ];
@@ -20,6 +20,7 @@ it(`render App`, () => {
       promoGenre={`horror`}
       promoYear={2021}
       films={mockFilms}
+      onTitleClick={() => {}}
     />)
     .toJSON;
 
