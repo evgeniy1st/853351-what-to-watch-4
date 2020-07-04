@@ -18,7 +18,7 @@ it(`render App`, () => {
     .create(<App
       promoTitle={`badMovie`}
       promoGenre={`horror`}
-      promoYear={2021}
+      promoYear={`2021`}
       films={mockFilms}
       onTitleClick={() => {}}
     />)

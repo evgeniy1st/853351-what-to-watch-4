@@ -11,13 +11,14 @@ class ListOfFilmCards extends PureComponent {
   }
 
   render() {
-    const {films} = this.props;
+    const {films, onTitleClick} = this.props;
     return (
       films.map((film) => {
         return (
           <SmallFilmCard
             key={film.title}
             film={film}
+            onTitleClick={onTitleClick}
             onCardHover={() => {
               this.setState({
                 hoverFilm: film,
@@ -37,6 +38,7 @@ ListOfFilmCards.propTypes = {
         image: PropTypes.string.isRequired,
       })
   ),
+  onTitleClick: PropTypes.func.isRequired,
 };
 
 export default ListOfFilmCards;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow} from "enzyme";
+import Enzyme, {mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Main from "./main.jsx";
 
@@ -16,11 +16,11 @@ it(`Should title be pressed`, () => {
   ];
   const onTitleClick = jest.fn();
 
-  const main = shallow(
+  const main = mount(
       <Main
         promoTitle={`badMovie`}
         promoGenre={`horror`}
-        promoYear={2021}
+        promoYear={`2021`}
         films={mockFilms}
         onTitleClick={onTitleClick}
       />

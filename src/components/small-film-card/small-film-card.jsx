@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const SmallFilmCard = (props) => {
-  const {film, onCardHover} = props;
+  const {film, onCardHover, onTitleClick} = props;
   return (
     <React.Fragment>
       <article
@@ -15,6 +15,7 @@ const SmallFilmCard = (props) => {
         </div>
         <h3 className="small-movie-card__title">
           <a
+            onClick={onTitleClick}
             className="small-movie-card__link"
             href="movie-page.html"
           >
@@ -32,6 +33,7 @@ SmallFilmCard.propTypes = {
     image: PropTypes.string.isRequired,
   }),
   onCardHover: PropTypes.func.isRequired,
+  onTitleClick: PropTypes.func.isRequired,
 };
 
 export default SmallFilmCard;
