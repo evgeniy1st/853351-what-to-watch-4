@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ListOfFilmCards from "../list-of-film-cards/list-of-film-cards.jsx";
 
 const Main = (props) => {
-  const {promoTitle, promoGenre, promoYear, films, onTitleClick} = props;
+  const {promoTitle, promoGenre, promoYear, films} = props;
   return (
     <React.Fragment>
       <section className="movie-card">
@@ -98,24 +99,9 @@ const Main = (props) => {
           </ul>
 
           <div className="catalog__movies-list">
-            {films.map((film) => {
-              return (
-                <article key={film.title} className="small-movie-card catalog__movies-card">
-                  <div className="small-movie-card__image">
-                    <img src={film.image} alt={film.title} width="280" height="175" />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a
-                      className="small-movie-card__link"
-                      onClick={onTitleClick}
-                      href="movie-page.html"
-                    >
-                      {film.title}
-                    </a>
-                  </h3>
-                </article>
-              );
-            })}
+            <ListOfFilmCards
+              films={films}
+            />
           </div>
 
           <div className="catalog__more">
@@ -144,7 +130,7 @@ const Main = (props) => {
 Main.propTypes = {
   promoTitle: PropTypes.string.isRequired,
   promoGenre: PropTypes.string.isRequired,
-  promoYear: PropTypes.number.isRequired,
+  promoYear: PropTypes.string.isRequired,
   films: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
