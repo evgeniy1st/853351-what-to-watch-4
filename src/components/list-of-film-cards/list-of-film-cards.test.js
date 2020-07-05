@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import ListOfFilmCards from "./list-of-film-cards.jsx";
 
-it(`render App`, () => {
+it(`render ListOfFilmCards`, () => {
   const mockFilms = [
     {
       title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -15,10 +15,7 @@ it(`render App`, () => {
   ];
 
   const tree = renderer
-    .create(<App
-      promoTitle={`badMovie`}
-      promoGenre={`horror`}
-      promoYear={`2021`}
+    .create(<ListOfFilmCards
       films={mockFilms}
       onTitleClick={() => {}}
     />)

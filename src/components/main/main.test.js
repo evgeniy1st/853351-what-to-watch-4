@@ -18,7 +18,7 @@ it(`render Main`, () => {
   .create(<Main
     promoTitle={`goodMovie`}
     promoGenre={`comedy`}
-    promoYear={2020}
+    promoYear={`2020`}
     films={mockFilms}
     onTitleClick={() => {}}
   />)
