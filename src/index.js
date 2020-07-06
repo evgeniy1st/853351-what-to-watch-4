@@ -16,7 +16,6 @@ const init = () => {
         promoGenre={PromoFilm.GENRE}
         promoYear={PromoFilm.YEAR}
         films={Films}
-        onTitleClick={() => {}}
       />,
       document.querySelector(`#root`)
   );

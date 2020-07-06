@@ -18,7 +18,10 @@ class ListOfFilmCards extends PureComponent {
           <SmallFilmCard
             key={film.title}
             film={film}
-            onTitleClick={onTitleClick}
+            onTitleClick={(evt) => {
+              evt.preventDefault();
+              onTitleClick(film);
+            }}
             onCardHover={() => {
               this.setState({
                 hoverFilm: film,

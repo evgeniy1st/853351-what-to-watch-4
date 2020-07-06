@@ -9,15 +9,15 @@ const SmallFilmCard = (props) => {
         key={film.title}
         className="small-movie-card catalog__movies-card"
         onMouseOver={onCardHover}
+        onClick={onTitleClick}
       >
         <div className="small-movie-card__image">
           <img src={film.image} alt={film.title} width="280" height="175" />
         </div>
         <h3 className="small-movie-card__title">
           <a
-            onClick={onTitleClick}
             className="small-movie-card__link"
-            href="movie-page.html"
+            href="/movie-page"
           >
             {film.title}
           </a>
