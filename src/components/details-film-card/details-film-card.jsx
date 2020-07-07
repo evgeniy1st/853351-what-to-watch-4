@@ -1,8 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 
 const DetailsFilmCard = (props) => {
   const {film} = props;
+  if (film === null) {
+    return (
+      <Link
+        className="small-movie-card__link"
+        to="/"
+      >
+        Вы не выбрали фильм. Перейти к выбору
+      </Link>
+    );
+  }
   return (
     <React.Fragment>
       <section className="movie-card movie-card--full">
