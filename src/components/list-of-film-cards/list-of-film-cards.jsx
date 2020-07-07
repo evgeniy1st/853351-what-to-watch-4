@@ -16,7 +16,7 @@ class ListOfFilmCards extends PureComponent {
       films.map((film) => {
         return (
           <SmallFilmCard
-            key={film.title}
+            key={film.title + Math.random()}
             film={film}
             onTitleClick={(evt) => {
               evt.preventDefault();
