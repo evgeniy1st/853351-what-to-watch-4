@@ -1,7 +1,7 @@
 import Main from "../main/main.jsx";
 import PropTypes from "prop-types";
 import React, {PureComponent} from "react";
-import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import DetailsFilmCard from "../details-film-card/details-film-card.jsx";
 
 class App extends PureComponent {
@@ -34,13 +34,9 @@ class App extends PureComponent {
             />
           </Route>
           <Route exact path="/movie-page">
-            if (currrentFilm !== null) {
-              <DetailsFilmCard
-                film={currrentFilm}
-              />
-            } else {
-              <Redirect to="/"/>
-            }
+            <DetailsFilmCard
+              film={currrentFilm}
+            />
           </Route>
         </Switch>
       </BrowserRouter>
