@@ -1,6 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Main from "./main.jsx";
+import {BrowserRouter} from "react-router-dom";
 
 it(`render Main`, () => {
   const mockFilms = [
@@ -35,13 +36,15 @@ it(`render Main`, () => {
   ];
 
   const tree = renderer
-  .create(<Main
-    promoTitle={`goodMovie`}
-    promoGenre={`comedy`}
-    promoYear={`2020`}
-    films={mockFilms}
-    onTitleClick={() => {}}
-  />)
+  .create(<BrowserRouter>
+    <Main
+      promoTitle={`goodMovie`}
+      promoGenre={`comedy`}
+      promoYear={`2020`}
+      films={mockFilms}
+      onTitleClick={() => { }}
+    />
+  </BrowserRouter>)
   .toJSON;
 
   expect(tree).toMatchSnapshot();

@@ -1,6 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import ListOfFilmCards from "./list-of-film-cards.jsx";
+import {BrowserRouter} from "react-router-dom";
 
 it(`render ListOfFilmCards`, () => {
   const mockFilms = [
@@ -15,10 +16,12 @@ it(`render ListOfFilmCards`, () => {
   ];
 
   const tree = renderer
-    .create(<ListOfFilmCards
-      films={mockFilms}
-      onTitleClick={() => {}}
-    />)
+    .create(<BrowserRouter>
+      <ListOfFilmCards
+        films={mockFilms}
+        onTitleClick={() => { }}
+      />
+    </BrowserRouter>)
     .toJSON;
 
   expect(tree).toMatchSnapshot();
