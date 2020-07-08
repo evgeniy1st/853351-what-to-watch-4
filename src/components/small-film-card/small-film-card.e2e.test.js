@@ -16,15 +16,16 @@ it(`new film in state`, () => {
   ];
   const testState = {
     hoverFilm: ``,
+    clickLink: null,
   };
-
-  const onTitleClick = jest.fn();
 
   const filmCard = shallow(
       <SmallFilmCard
         key={mockFilms[0].title}
         film={mockFilms[0]}
-        onTitleClick={onTitleClick}
+        onTitleClick={() => {
+          testState.clickLink = mockFilms[0];
+        }}
         onCardHover={() => {
           testState.hoverFilm = mockFilms[0];
         }}
@@ -33,5 +34,9 @@ it(`new film in state`, () => {
 
   const card = filmCard.find(`article`);
   card.simulate(`mouseover`, {preventDefault() { }});
+  expect(testState.hoverFilm).toEqual(mockFilms[0]);
+
+  const link = filmCard.find(`.small-movie-card__link`);
+  link.simulate(`click`, {preventDefault() { }});
   expect(testState.hoverFilm).toEqual(mockFilms[0]);
 });
