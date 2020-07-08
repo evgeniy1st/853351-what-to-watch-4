@@ -16,9 +16,11 @@ class ListOfFilmCards extends PureComponent {
       films.map((film) => {
         return (
           <SmallFilmCard
-            key={film.title}
+            key={film.title + Math.random()}
             film={film}
-            onTitleClick={onTitleClick}
+            onTitleClick={() => {
+              onTitleClick(film);
+            }}
             onCardHover={() => {
               this.setState({
                 hoverFilm: film,
