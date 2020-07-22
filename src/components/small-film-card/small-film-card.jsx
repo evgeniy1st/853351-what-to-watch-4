@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
+import VideoPlayer from "../video-player/video-player.jsx";
 
 const SmallFilmCard = (props) => {
   const {film, onCardHover, onTitleClick} = props;
@@ -11,9 +12,12 @@ const SmallFilmCard = (props) => {
         className="small-movie-card catalog__movies-card"
         onMouseOver={onCardHover}
       >
-        <div className="small-movie-card__image">
-          <img src={film.image} alt={film.title} width="280" height="175" />
-        </div>
+        <VideoPlayer
+          src={film.preview}
+          poster={film.image}
+        />
+
+
         <h3 className="small-movie-card__title">
           <Link
             onClick={onTitleClick}
@@ -32,9 +36,11 @@ SmallFilmCard.propTypes = {
   film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired
   }),
   onCardHover: PropTypes.func.isRequired,
   onTitleClick: PropTypes.func.isRequired,
 };
 
 export default SmallFilmCard;
+

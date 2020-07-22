@@ -33,7 +33,8 @@ const Films = [
     ratingStatus: getRatingStatus(8),
     qntRatings: 200,
     director: `Willie Baker`,
-    starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`]
+    starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -48,7 +49,8 @@ const Films = [
     ratingStatus: getRatingStatus(7.5),
     qntRatings: 150,
     director: `Rhoda Crawford`,
-    starring: [`Flora Turner`, `Jane Rogers`, `Clara McDonald`]
+    starring: [`Flora Turner`, `Jane Rogers`, `Clara McDonald`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -62,7 +64,8 @@ const Films = [
     ratingStatus: getRatingStatus(6),
     qntRatings: 230,
     director: `Roger Gregory`,
-    starring: [`Jordan Watkins`, `Willie Powell`]
+    starring: [`Jordan Watkins`, `Willie Powell`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -76,7 +79,8 @@ const Films = [
     ratingStatus: getRatingStatus(9),
     qntRatings: 185,
     director: `Jesus Allen`,
-    starring: [`Hilda Robertson`, `Phillip Ball`, `Joe Fowler`, `Todd Payne`]
+    starring: [`Hilda Robertson`, `Phillip Ball`, `Joe Fowler`, `Todd Payne`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -90,7 +94,8 @@ const Films = [
     ratingStatus: getRatingStatus(5),
     qntRatings: 320,
     director: `Leo Carson`,
-    starring: [`Amy Mann`]
+    starring: [`Amy Mann`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -104,7 +109,8 @@ const Films = [
     ratingStatus: getRatingStatus(6.5),
     qntRatings: 56,
     director: `Elmer Bates`,
-    starring: [`Justin Andrews`, `Cole Herrera`, `Travis McBride`, `Cecilia Shelton`]
+    starring: [`Justin Andrews`, `Cole Herrera`, `Travis McBride`, `Cecilia Shelton`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -118,7 +124,8 @@ const Films = [
     ratingStatus: getRatingStatus(4),
     qntRatings: 97,
     director: `Dennis Long`,
-    starring: [`Jonathan Schwartz`]
+    starring: [`Jonathan Schwartz`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -132,7 +139,8 @@ const Films = [
     ratingStatus: getRatingStatus(5.5),
     qntRatings: 232,
     director: `Leah Pittman`,
-    starring: [`Aiden Patterson`, `Landon Weber`, `Gabriel Goodwin`]
+    starring: [`Aiden Patterson`, `Landon Weber`, `Gabriel Goodwin`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
   {
@@ -146,7 +154,8 @@ const Films = [
     ratingStatus: getRatingStatus(9.5),
     qntRatings: 300,
     director: `Kate Lyons`,
-    starring: [`Eva Jordan`, `Margaret Yates`, `Aiden Wong`, `Bradley Myers`]
+    starring: [`Eva Jordan`, `Margaret Yates`, `Aiden Wong`, `Bradley Myers`],
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
 
 ];

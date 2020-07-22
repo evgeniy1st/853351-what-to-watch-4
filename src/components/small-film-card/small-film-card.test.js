@@ -7,6 +7,7 @@ it(`render SmallFilmCard`, () => {
   const mockFilm =
     {
       title: `Fantastic Beasts: The Crimes of Grindelwald`,
+      preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
       image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
     };
 
