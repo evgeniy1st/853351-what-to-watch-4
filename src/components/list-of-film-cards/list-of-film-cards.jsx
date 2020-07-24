@@ -21,11 +21,7 @@ class ListOfFilmCards extends PureComponent {
             onTitleClick={() => {
               onTitleClick(film);
             }}
-            onCardHover={() => {
-              this.setState({
-                hoverFilm: film,
-              });
-            }}
+            onCardHover={() => {}}
           />
         );
       })

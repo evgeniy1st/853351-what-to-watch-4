@@ -17,7 +17,8 @@ it(`render Main`, () => {
       ratingStatus: `good`,
       qntRatings: 200,
       director: `Willie Baker`,
-      starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`]
+      starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`],
+      preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     },
     {
       title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -31,7 +32,8 @@ it(`render Main`, () => {
       ratingStatus: `good`,
       qntRatings: 200,
       director: `Willie Baker`,
-      starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`]
+      starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`],
+      preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     }
   ];
 
