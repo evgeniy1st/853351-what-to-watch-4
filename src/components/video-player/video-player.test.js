@@ -14,6 +14,8 @@ it(`render VideoPlayer`, () => {
         <VideoPlayer
           src={mockFilm.preview}
           poster={mockFilm.image}
+          mouseOver={() => {}}
+          mouseLeave={() => { }}
         />)
     .toJSON;
 
