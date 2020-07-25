@@ -1,69 +1,44 @@
-import React, {PureComponent, createRef} from "react";
+import React, {createRef} from "react";
 import PropTypes from "prop-types";
 import {VIDEO_PARAMS} from "../../utils/constants.js";
+import withPlayingState from "../../hocs/with-playing-state/with-playing-state.jsx";
 
-class VideoPlayer extends PureComponent {
-  constructor(props) {
-    super(props);
+const VideoPlayer = (props) => {
+  const _video = createRef();
 
-    this.state = {
-      isPlaying: false,
-    };
+  const {src, poster, mouseOver, mouseLeave} = props;
+  let timeoutId = null;
 
-    this._video = createRef();
-  }
-
-  mouseOver() {
-    this.setState({
-      isPlaying: true,
-    });
-    if (this._video.current) {
-      this._video.current.play();
-    }
-  }
-
-  mouseLeave() {
-    this.setState({
-      isPlaying: false,
-    });
-    if (this._video.current) {
-      this._video.current.load();
-    }
-  }
-
-  render() {
-    const {src, poster} = this.props;
-    let timeoutId = null;
-
-    return (
-      <div className="small-movie-card__image"
-        onMouseOver={() => {
-          timeoutId = setTimeout(() => {
-            this.mouseOver();
-          }, 1000);
-        }}
-        onMouseLeave={() => {
-          clearTimeout(timeoutId);
-          this.mouseLeave();
-        }}
-      >
-        <video
-          src={src}
-          poster={poster}
-          ref={this._video}
-          width={VIDEO_PARAMS.width}
-          height={VIDEO_PARAMS.height}
-          preload={VIDEO_PARAMS.preload}
-          muted={VIDEO_PARAMS.muted}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="small-movie-card__image"
+      onMouseOver={() => {
+        timeoutId = setTimeout(() => {
+          mouseOver(_video.current);
+        }, 1000);
+      }}
+      onMouseLeave={() => {
+        clearTimeout(timeoutId);
+        mouseLeave(_video.current);
+      }}
+    >
+      <video
+        src={src}
+        poster={poster}
+        ref={_video}
+        width={VIDEO_PARAMS.width}
+        height={VIDEO_PARAMS.height}
+        preload={VIDEO_PARAMS.preload}
+        muted={VIDEO_PARAMS.muted}
+      />
+    </div>
+  );
+};
 
 VideoPlayer.propTypes = {
   src: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
+  mouseOver: PropTypes.func.isRequired,
+  mouseLeave: PropTypes.func.isRequired,
 };
 
-export default VideoPlayer;
+export default withPlayingState(VideoPlayer);
