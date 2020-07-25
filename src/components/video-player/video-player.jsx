@@ -13,6 +13,24 @@ class VideoPlayer extends PureComponent {
     this._video = createRef();
   }
 
+  mouseOver() {
+    this.setState({
+      isPlaying: true,
+    });
+    if (this._video.current) {
+      this._video.current.play();
+    }
+  }
+
+  mouseLeave() {
+    this.setState({
+      isPlaying: false,
+    });
+    if (this._video.current) {
+      this._video.current.load();
+    }
+  }
+
   render() {
     const {src, poster} = this.props;
     let timeoutId = null;
@@ -21,18 +39,12 @@ class VideoPlayer extends PureComponent {
       <div className="small-movie-card__image"
         onMouseOver={() => {
           timeoutId = setTimeout(() => {
-            this.setState({
-              isPlaying: true,
-            });
-            this._video.current.play();
+            this.mouseOver();
           }, 1000);
         }}
         onMouseLeave={() => {
           clearTimeout(timeoutId);
-          this.setState({
-            isPlaying: false,
-          });
-          this._video.current.load();
+          this.mouseLeave();
         }}
       >
         <video
