@@ -3,4 +3,5 @@ export const VIDEO_PARAMS = {
   height: `175`,
   preload: `false`,
   muted: true,
+  delay: 1000,
 };
