@@ -8,12 +8,14 @@ it(`render ListOfFilmCards`, () => {
     {
       title: `Fantastic Beasts: The Crimes of Grindelwald`,
       preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-      image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+      image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      genre: `comedy`
     },
     {
       title: `Fantastic Beasts: The Crimes of Grindelwald2`,
       preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-      image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+      image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      genre: `comedy`
     }
   ];
 
@@ -22,6 +24,7 @@ it(`render ListOfFilmCards`, () => {
       <ListOfFilmCards
         films={mockFilms}
         onTitleClick={() => { }}
+        isLikes={false}
       />
     </BrowserRouter>)
     .toJSON;

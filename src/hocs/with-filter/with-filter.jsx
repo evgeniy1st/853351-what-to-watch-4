@@ -3,7 +3,7 @@ import PropTypes, {shape} from "prop-types";
 
 const withFilter = (Component) => {
 
-  return class FiltresFilms extends PureComponent {
+  class FiltresFilms extends PureComponent {
     constructor(props) {
       super(props);
     }
@@ -28,20 +28,22 @@ const withFilter = (Component) => {
         />
       );
     }
-  };
-};
+  }
 
-withFilter.propTypes = {
-  films: PropTypes.arrayOf(shape({
-    genre: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  })),
-  onTitleClick: PropTypes.func.isRequired,
-  isLikes: PropTypes.bool.isRequired,
-  film: PropTypes.shape({
-    genre: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  })
+  FiltresFilms.propTypes = {
+    films: PropTypes.arrayOf(shape({
+      genre: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })),
+    onTitleClick: PropTypes.func.isRequired,
+    isLikes: PropTypes.bool.isRequired,
+    film: PropTypes.shape({
+      genre: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  };
+
+  return FiltresFilms;
 };
 
 export default withFilter;

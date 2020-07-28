@@ -24,6 +24,8 @@ it(`render DetailsFilmCard`, () => {
     .create(<BrowserRouter>
       <DetailsFilmCard
         film={mockFilm}
+        films={[]}
+        onTitleClick={() => {}}
       />
     </BrowserRouter>)
     .toJSON;
