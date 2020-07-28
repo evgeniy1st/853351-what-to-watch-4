@@ -4,13 +4,12 @@ import {Link} from "react-router-dom";
 import VideoPlayer from "../video-player/video-player.jsx";
 
 const SmallFilmCard = (props) => {
-  const {film, onCardHover, onTitleClick} = props;
+  const {film, onTitleClick} = props;
   return (
     <React.Fragment>
       <article
         key={film.title}
         className="small-movie-card catalog__movies-card"
-        onMouseOver={onCardHover}
       >
         <VideoPlayer
           src={film.preview}

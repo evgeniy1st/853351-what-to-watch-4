@@ -102,6 +102,7 @@ const Main = (props) => {
             <ListOfFilmCards
               films={films}
               onTitleClick={onTitleClick}
+              isLikes={false}
             />
           </div>
 
