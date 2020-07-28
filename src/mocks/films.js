@@ -1,3 +1,6 @@
+const MAX_QNT_RANDOM_COMMENTS = 6;
+const MIN_QNT_RANDOM_COMMENTS = 2;
+
 const getRatingStatus = (rating) => {
   const result = ``;
   switch (rating) {
@@ -20,6 +23,62 @@ const getRatingStatus = (rating) => {
   return result;
 };
 
+const getRandomInt = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const getRandomCommentList = () => {
+  let commentList = [];
+  while (commentList.length < getRandomInt(MIN_QNT_RANDOM_COMMENTS, MAX_QNT_RANDOM_COMMENTS)) {
+    commentList.push(reviews[getRandomInt(0, reviews.length)]);
+  }
+  return commentList;
+};
+
+const reviews = [
+  {
+    rating: 8.9,
+    text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+    author: `Kate Muir`,
+    date: new Date(2016, 11, 24),
+  },
+
+  {
+    rating: 7.2,
+    text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+    author: `Matthew Lickona`,
+    date: new Date(2016, 11, 20),
+  },
+
+  {
+    rating: 8.0,
+    text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+    author: `Bill Goodykoontz`,
+    date: new Date(2015, 10, 28),
+  },
+
+  {
+    rating: 7.6,
+    text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+    author: `Paula Fleri-Soler`,
+    date: new Date(2016, 11, 20),
+  },
+
+  {
+    rating: 8.0,
+    text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+    author: `Amanda Greever`,
+    date: new Date(2015, 10, 18),
+  },
+
+  {
+    rating: 8.9,
+    text: `Quis aliquip et amet minim sunt. Excepteur est magna id eiusmod occaecat culpa voluptate. Irure est eiusmod consectetur proident ut elit do aliquip dolore enim.`,
+    author: `Lucile Henderson`,
+    date: new Date(2015, 9, 13),
+  }
+];
+
 const Films = [
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -34,7 +93,10 @@ const Films = [
     qntRatings: 200,
     director: `Willie Baker`,
     starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -50,7 +112,10 @@ const Films = [
     qntRatings: 150,
     director: `Rhoda Crawford`,
     starring: [`Flora Turner`, `Jane Rogers`, `Clara McDonald`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -65,7 +130,10 @@ const Films = [
     qntRatings: 230,
     director: `Roger Gregory`,
     starring: [`Jordan Watkins`, `Willie Powell`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -80,7 +148,10 @@ const Films = [
     qntRatings: 185,
     director: `Jesus Allen`,
     starring: [`Hilda Robertson`, `Phillip Ball`, `Joe Fowler`, `Todd Payne`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -95,7 +166,10 @@ const Films = [
     qntRatings: 320,
     director: `Leo Carson`,
     starring: [`Amy Mann`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -110,7 +184,10 @@ const Films = [
     qntRatings: 56,
     director: `Elmer Bates`,
     starring: [`Justin Andrews`, `Cole Herrera`, `Travis McBride`, `Cecilia Shelton`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -125,7 +202,10 @@ const Films = [
     qntRatings: 97,
     director: `Dennis Long`,
     starring: [`Jonathan Schwartz`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -140,7 +220,10 @@ const Films = [
     qntRatings: 232,
     director: `Leah Pittman`,
     starring: [`Aiden Patterson`, `Landon Weber`, `Gabriel Goodwin`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
   {
@@ -155,7 +238,10 @@ const Films = [
     qntRatings: 300,
     director: `Kate Lyons`,
     starring: [`Eva Jordan`, `Margaret Yates`, `Aiden Wong`, `Bradley Myers`],
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    reviews: [
+      getRandomCommentList()
+    ],
   },
 
 ];

@@ -102,6 +102,7 @@ const Main = (props) => {
             <ListOfFilmCards
               films={films}
               onTitleClick={onTitleClick}
+              isLikes={false}
             />
           </div>
 
@@ -136,6 +137,7 @@ Main.propTypes = {
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
       })
   ),
   onTitleClick: PropTypes.func.isRequired,

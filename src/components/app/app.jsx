@@ -36,6 +36,8 @@ class App extends PureComponent {
           <Route exact path="/movie-page">
             <DetailsFilmCard
               film={currrentFilm}
+              films={films}
+              onTitleClick={onTitleClick}
             />
           </Route>
         </Switch>
