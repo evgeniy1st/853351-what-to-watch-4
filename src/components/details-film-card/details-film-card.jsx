@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import ListOfFilmCards from "../list-of-film-cards/list-of-film-cards.jsx";
+import Tabs from "../tabs/tabs.jsx";
 
 const DetailsFilmCard = (props) => {
   const {film, films, onTitleClick} = props;
@@ -74,37 +75,10 @@ const DetailsFilmCard = (props) => {
               <img src={film.image} alt={film.title} width="218" height="327" />
             </div>
 
-            <div className="movie-card__desc">
-              <nav className="movie-nav movie-card__nav">
-                <ul className="movie-nav__list">
-                  <li className="movie-nav__item movie-nav__item--active">
-                    <a href="#" className="movie-nav__link">Overview</a>
-                  </li>
-                  <li className="movie-nav__item">
-                    <a href="#" className="movie-nav__link">Details</a>
-                  </li>
-                  <li className="movie-nav__item">
-                    <a href="#" className="movie-nav__link">Reviews</a>
-                  </li>
-                </ul>
-              </nav>
+            <Tabs
+              film={film}
+            />
 
-              <div className="movie-rating">
-                <div className="movie-rating__score">{film.rating}</div>
-                <p className="movie-rating__meta">
-                  <span className="movie-rating__level">{film.ratingStatus}</span>
-                  <span className="movie-rating__count">{film.qntRatings} ratings</span>
-                </p>
-              </div>
-
-              <div className="movie-card__text">
-                <p>{film.description}</p>
-
-                <p className="movie-card__director"><strong>Director: {film.director} </strong></p>
-
-                <p className="movie-card__starring"><strong>Starring: {film.starring.join(`, `)} and other</strong></p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

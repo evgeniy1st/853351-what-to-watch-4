@@ -1,5 +1,5 @@
-const MAX_QNT_RANDOM_COMMENTS = 6;
-const MIN_QNT_RANDOM_COMMENTS = 2;
+// const MAX_QNT_RANDOM_COMMENTS = 6;
+// const MIN_QNT_RANDOM_COMMENTS = 2;
 
 const getRatingStatus = (rating) => {
   const result = ``;
@@ -23,17 +23,17 @@ const getRatingStatus = (rating) => {
   return result;
 };
 
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+// const getRandomInt = (min, max) => {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
 
-const getRandomCommentList = () => {
-  let commentList = [];
-  while (commentList.length < getRandomInt(MIN_QNT_RANDOM_COMMENTS, MAX_QNT_RANDOM_COMMENTS)) {
-    commentList.push(reviews[getRandomInt(0, reviews.length)]);
-  }
-  return commentList;
-};
+// const getRandomCommentList = () => {
+//   let commentList = [];
+//   while (commentList.length < getRandomInt(MIN_QNT_RANDOM_COMMENTS, MAX_QNT_RANDOM_COMMENTS)) {
+//     commentList.push(reviews[getRandomInt(0, reviews.length)]);
+//   }
+//   return commentList;
+// };
 
 const reviews = [
   {
@@ -41,6 +41,15 @@ const reviews = [
     text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
     author: `Kate Muir`,
     date: new Date(2016, 11, 24),
+    id: 45220
+  },
+
+  {
+    rating: 8.9,
+    text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+    author: `Kate Muir`,
+    date: new Date(2016, 11, 24),
+    id: 3940
   },
 
   {
@@ -48,6 +57,7 @@ const reviews = [
     text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
     author: `Matthew Lickona`,
     date: new Date(2016, 11, 20),
+    id: 17940
   },
 
   {
@@ -55,6 +65,7 @@ const reviews = [
     text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
     author: `Bill Goodykoontz`,
     date: new Date(2015, 10, 28),
+    id: 47111
   },
 
   {
@@ -62,6 +73,7 @@ const reviews = [
     text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
     author: `Paula Fleri-Soler`,
     date: new Date(2016, 11, 20),
+    id: 9145
   },
 
   {
@@ -69,6 +81,7 @@ const reviews = [
     text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
     author: `Amanda Greever`,
     date: new Date(2015, 10, 18),
+    id: 33831
   },
 
   {
@@ -76,6 +89,7 @@ const reviews = [
     text: `Quis aliquip et amet minim sunt. Excepteur est magna id eiusmod occaecat culpa voluptate. Irure est eiusmod consectetur proident ut elit do aliquip dolore enim.`,
     author: `Lucile Henderson`,
     date: new Date(2015, 9, 13),
+    id: 39373
   }
 ];
 
@@ -84,7 +98,7 @@ const Films = [
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     bgImage: `img/bg-the-grand-budapest-hotel.jpg`,
-    genre: `adventures`,
+    genre: `drama`,
     years: `2018`,
     description: `Nostrud et anim do nisi aute proident sunt ad. Duis eiusmod esse magna proident. Culpa nostrud sunt Lorem irure nisi. Enim nostrud in proident quis quis et do et nostrud aute ad magna qui aliqua. Ea veniam aliqua consectetur mollit id. Esse ex Lorem exercitation minim minim exercitation ut dolore laborum amet mollit.
     Dolor consequat et ex sunt tempor id amet. Culpa deserunt ex ullamco occaecat exercitation deserunt consectetur tempor aute ea. Qui quis incididunt nisi adipisicing eiusmod deserunt. Duis et officia exercitation magna consectetur ut cillum sint elit tempor commodo aliqua in consequat. Magna labore pariatur Lorem irure sunt ex velit sint consectetur minim do aliquip sunt. Esse ea incididunt magna occaecat cillum enim do.`,
@@ -94,9 +108,8 @@ const Films = [
     director: `Willie Baker`,
     starring: [`Elsie Simon`, `Ora Lee`, `Essie Davidson`, `Nettie Schwartz`, `Louise McGee`, `Katherine Hunt`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
@@ -113,9 +126,8 @@ const Films = [
     director: `Rhoda Crawford`,
     starring: [`Flora Turner`, `Jane Rogers`, `Clara McDonald`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
@@ -131,9 +143,8 @@ const Films = [
     director: `Roger Gregory`,
     starring: [`Jordan Watkins`, `Willie Powell`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
@@ -149,16 +160,15 @@ const Films = [
     director: `Jesus Allen`,
     starring: [`Hilda Robertson`, `Phillip Ball`, `Joe Fowler`, `Todd Payne`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
     title: `We need to talk about Kevin`,
     image: `img/we-need-to-talk-about-kevin.jpg`,
     bgImage: `img/bg-the-grand-budapest-hotel.jpg`,
-    genre: `family`,
+    genre: `musical`,
     years: `2016`,
     description: `Nulla anim esse velit ut ullamco aliqua mollit non mollit in consequat sit. Deserunt nisi quis labore aliquip pariatur magna reprehenderit exercitation ex aute incididunt aliquip est. Mollit ad id officia voluptate. Enim culpa minim aliquip eu. Labore elit quis in id nostrud ad elit occaecat Lorem minim. Aute esse consectetur nostrud nulla eu esse quis. Et deserunt ut ea amet sunt. In aliqua eiusmod commodo et. Mollit duis in et est excepteur ex nulla incididunt et qui anim labore enim. Est sint ad ipsum reprehenderit pariatur. Ex pariatur dolore fugiat proident pariatur qui ipsum cillum.`,
     rating: 5,
@@ -167,16 +177,15 @@ const Films = [
     director: `Leo Carson`,
     starring: [`Amy Mann`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
     title: `What We Do in the Shadows`,
     image: `img/what-we-do-in-the-shadows.jpg`,
     bgImage: `img/bg-the-grand-budapest-hotel.jpg`,
-    genre: `others`,
+    genre: `thriller`,
     years: `2008`,
     description: `Duis est ea elit anim officia occaecat eu aliqua occaecat laboris in. Dolore est id veniam non reprehenderit sint exercitation proident voluptate culpa esse incididunt commodo consectetur. Do laboris quis commodo quis reprehenderit enim incididunt officia aliqua. Minim quis ipsum amet sit. Duis fugiat velit exercitation incididunt minim qui sit qui aute nisi est ad. Ex commodo magna cupidatat ipsum. Id exercitation laborum duis commodo elit consectetur magna cillum. Sint laboris aliquip aute aliquip consequat et sit laborum laboris quis fugiat. Ut cillum ullamco voluptate eu nostrud laboris. Commodo nisi commodo anim exercitation fugiat incididunt labore et incididunt dolor aliquip consectetur amet. In do officia cupidatat ullamco ea Lorem sit nulla. Non ea sunt ut proident. Sunt et do ipsum cillum irure elit ipsum adipisicing elit enim.`,
     rating: 6.5,
@@ -185,9 +194,8 @@ const Films = [
     director: `Elmer Bates`,
     starring: [`Justin Andrews`, `Cole Herrera`, `Travis McBride`, `Cecilia Shelton`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
@@ -203,16 +211,15 @@ const Films = [
     director: `Dennis Long`,
     starring: [`Jonathan Schwartz`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
     title: `Johnny English`,
     image: `img/johnny-english.jpg`,
     bgImage: `img/bg-the-grand-budapest-hotel.jpg`,
-    genre: `criminal`,
+    genre: `drama`,
     years: `2009`,
     description: `Laborum tempor adipisicing ex labore non officia qui consectetur duis. Tempor velit incididunt nulla magna eu do in incididunt deserunt eu quis adipisicing eu. Duis minim nisi sunt et consequat nisi sit nulla fugiat ad sint qui id. Sit non ut et incididunt elit. Magna ex dolore esse amet magna consequat velit adipisicing qui et fugiat consectetur nulla amet. Dolor Lorem velit aliquip sint anim cupidatat occaecat dolore laborum. Laboris mollit irure duis est enim reprehenderit exercitation consequat non. Id consectetur nisi mollit elit pariatur. Id mollit veniam consectetur sint et amet non duis non exercitation. Veniam Lorem amet pariatur exercitation et culpa id. Reprehenderit tempor dolore culpa reprehenderit aute sit aliqua nulla elit do minim elit. Velit cillum exercitation elit aute non minim eu nulla aute id ea. Deserunt aliqua fugiat esse sint consequat ex eu. Occaecat sint non aliqua duis aute.`,
     rating: 5.5,
@@ -221,9 +228,8 @@ const Films = [
     director: `Leah Pittman`,
     starring: [`Aiden Patterson`, `Landon Weber`, `Gabriel Goodwin`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
   {
@@ -239,9 +245,8 @@ const Films = [
     director: `Kate Lyons`,
     starring: [`Eva Jordan`, `Margaret Yates`, `Aiden Wong`, `Bradley Myers`],
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    reviews: [
-      getRandomCommentList()
-    ],
+    reviews,
+    runTime: `1h 25m`
   },
 
 ];
