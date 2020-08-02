@@ -1,7 +1,7 @@
 import React from "react";
-import TabOverview from "../tab-overview/tab-overview.jsx";
-import TabDetails from "../tab-details/tab-details.jsx";
-import TabReviews from "../tab-reviews/tab-reviews.jsx";
+import TabOverview from "../tabs-collection/tab-overview/tab-overview.jsx";
+import TabDetails from "../tabs-collection/tab-details/tab-details.jsx";
+import TabReviews from "../tabs-collection/tab-reviews/tab-reviews.jsx";
 import PropTypes from "prop-types";
 
 const tabChanger = (props) => {

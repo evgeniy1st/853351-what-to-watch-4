@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from "../comment/comment.jsx";
+import Comment from "../../comment/comment.jsx";
 import PropTypes from "prop-types";
 
 const TabReviews = (props) => {
